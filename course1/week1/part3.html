@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating website</title>
+
+    <style type="text/css">
+        body {
+            font-size: 16px;
+            font-family: Arial,serif;
+        }
+
+        fieldset {
+            background: lightyellow;
+            border: 10px solid yellow;
+            margin-bottom: 10px;
+            width: 720px;
+        }
+
+        label {
+            width: 180px;
+            display:inline-block;
+            text-align: right;
+            vertical-align: text-top;
+        }
+
+        textarea {
+            width: 360px;
+            height: 50px;
+        }
+
+        .radio_checkbox_label {
+            width: auto;
+        }
+
+        .range_legend {
+            color: white;
+            display:inline-block;
+            width: 50px;
+            text-align: center;
+            -webkit-appearance: none;
+            padding: 3px;
+        }
+
+        .min {
+            background: brown;
+        }
+
+        .max {
+            background: purple;
+        }
+
+        label:hover { font-size:40px }
+
+        input[type=range]{
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 300px;
+            height: 5px;
+            background: darkgray;
+            border: solid 1px black;
+            border-radius: 3px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            border: solid 1px black;
+            background: white;
+            margin-top: -6px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website!</h1>
+
+<form id = 'dating_form' action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post">
+    <fieldset>
+        <legend>Your Face</legend>
+        <label for="avatar">Your image:</label>
+        <input id="avatar" type="file" name="avatar" required><br>
+        <label>Image preview:</label>
+        <img id="preview">
+    </fieldset>
+
+    <fieldset>
+        <legend>Your General Details</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required class = "text_input  "><br>
+
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male" class="radio_checkbox_label">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female" class="radio_checkbox_label">Female</label><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" max="99" value="18" required><br>
+
+        <label for="birthday">Date of birth:</label>
+        <input type="date" id="birthday" name="birthday"><br>
+
+        <label for="color">Favourite color:</label>
+        <input type="color" id="color" name="color"><br>
+
+        <label for="country">Which country:</label>
+        <select id="country" name="country">
+            <option selected="selected"></option>
+            <option value="UA">USA</option>
+            <option value="CA">Canada</option>
+            <option value="PL">Poland</option>
+            <option value="UA">Ukraine</option>
+            <option value="FR">France</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your indicators</legend>
+
+        <label for="height">Height: </label><span class="min range_legend">Short</span>
+        <input type="range" id="height" name="height" min="0" max="100" step="1" value="50">
+        <span class="max range_legend">Tall</span><br>
+
+        <label for="salary">Salary: </label><span class="min range_legend">Poor</span>
+        <input type="range" id="salary" name="salary" min="0" max="100" step="1" value="50">
+        <span class="max range_legend">Rich</span><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Your Contact Information</legend>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Mobile:</label>
+        <input type="tel" id="phone" name="phone"><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea><br>
+
+        <label>Method to contact you: </label>
+
+        <input type="checkbox" id="contact_by_email" name="contact_by_email">
+        <label for="contact_by_email" class="radio_checkbox_label">Email</label>
+
+        <input type="checkbox" id="contact_by_whatsapp" name="contact_by_whatsapp">
+        <label for="contact_by_whatsapp" class="radio_checkbox_label">Whatsapp</label>
+
+        <input type="checkbox" id="contact_by_in_app_chat" name="contact_by_in_app_chat">
+        <label for="contact_by_in_app_chat" class="radio_checkbox_label">In-app chat</label>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+
+</form>
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+
+</body>
+</html>
